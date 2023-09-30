@@ -1,0 +1,112 @@
+class T1 extends java.lang.Thread
+{
+    Buf l;
+
+    void <init>()
+    {
+        T1 r0;
+
+        r0 := @this: T1;
+
+        specialinvoke r0.<java.lang.Thread: void <init>()>();
+
+        return;
+    }
+
+    public void newExec(int)
+    {
+        java.lang.Throwable $r4;
+        Buf $r2;
+        int i0;
+        T1 r1;
+        T2 $r0;
+        java.lang.Exception $r3;
+
+        r1 := @this: T1;
+
+        i0 := @parameter0: int;
+
+     label1:
+        $r0 = new T2;
+
+        specialinvoke $r0.<T2: void <init>()>();
+
+        virtualinvoke $r0.<T2: void set(int)>(i0);
+
+        virtualinvoke $r0.<T2: void start()>();
+
+        $r2 = r1.<T1: Buf l>;
+
+        entermonitor $r2;
+
+     label2:
+        virtualinvoke r1.<T1: void tl3()>();
+
+        exitmonitor $r2;
+
+     label3:
+        goto label6;
+
+     label4:
+        $r4 := @caughtexception;
+
+        exitmonitor $r2;
+
+     label5:
+        throw $r4;
+
+     label6:
+        virtualinvoke $r0.<T2: void join()>();
+
+     label7:
+        goto label9;
+
+     label8:
+        $r3 := @caughtexception;
+
+     label9:
+        return;
+
+        catch java.lang.Throwable from label2 to label3 with label4;
+        catch java.lang.Throwable from label4 to label5 with label4;
+        catch java.lang.Exception from label1 to label7 with label8;
+    }
+
+    public void run()
+    {
+        T1 r0;
+
+        r0 := @this: T1;
+
+        virtualinvoke r0.<T1: void newExec(int)>(7);
+
+        return;
+    }
+
+    public void l1()
+    {
+        T1 r0;
+
+        r0 := @this: T1;
+
+        return;
+    }
+
+    public void l3()
+    {
+        T1 r0;
+
+        r0 := @this: T1;
+
+        return;
+    }
+
+    public void tl3()
+    {
+        T1 r0;
+
+        r0 := @this: T1;
+
+        return;
+    }
+}

@@ -1,0 +1,61 @@
+class P extends java.lang.Object
+{
+
+    void <init>()
+    {
+        P r0;
+
+        r0 := @this: P;
+
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public static void main(java.lang.String[])
+    {
+        B $r0;
+        Buf $r2;
+        C $r1;
+        java.lang.String[] r4;
+        java.lang.Exception $r3;
+
+        r4 := @parameter0: java.lang.String[];
+
+     label1:
+        $r0 = new B;
+
+        specialinvoke $r0.<B: void <init>()>();
+
+        $r1 = new C;
+
+        specialinvoke $r1.<C: void <init>()>();
+
+        $r2 = new Buf;
+
+        specialinvoke $r2.<Buf: void <init>()>();
+
+        $r0.<B: Buf b> = $r2;
+
+        $r1.<C: Buf b> = $r2;
+
+        virtualinvoke $r0.<B: void start()>();
+
+        virtualinvoke $r1.<C: void start()>();
+
+        virtualinvoke $r0.<B: void join()>();
+
+        virtualinvoke $r1.<C: void join()>();
+
+     label2:
+        goto label4;
+
+     label3:
+        $r3 := @caughtexception;
+
+     label4:
+        return;
+
+        catch java.lang.Exception from label1 to label2 with label3;
+    }
+}

@@ -1,0 +1,14 @@
+class Buf extends java.lang.Object
+{
+
+    void <init>()
+    {
+        Buf r0;
+
+        r0 := @this: Buf;
+
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+}

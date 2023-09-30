@@ -1,0 +1,16 @@
+T:some, Buf:l4
+Buf:l1, T:some
+Buf:l1, Buf:l3
+Buf:l1, Buf:l4
+Buf:l2, T:some
+Buf:l2, Buf:l3
+Buf:l2, Buf:l4
+Buf:l5, T:some
+Buf:l5, Buf:l3
+Buf:l5, Buf:l4
+Buf:l6, T:some
+Buf:l6, Buf:l3
+Buf:l6, Buf:l4
+Buf:l3, T:some
+Buf:l4, T:some
+T:some, T:some

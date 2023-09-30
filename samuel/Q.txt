@@ -1,0 +1,10 @@
+C:f3, B:bar
+C:f2, B:bar
+B:foo,C:f2
+B:foo,C:f3
+B:bar,C:f2
+B:bar,C:f3
+B:gar,C:f2
+B:gar,C:f3
+B:bar,C:f4
+B:goo,C:f3

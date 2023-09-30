@@ -1,0 +1,6 @@
+MyLock:bar1 MHP? MyLock:bar1
+MyLock:bar2 MHP? MyLock:bar2
+MyLock:bar3 MHP? MyLock:bar3
+MyLock:bar1 MHP? MyLock:bar2
+MyLock:bar2 MHP? MyLock:bar3
+MyLock:bar3 MHP? MyLock:bar1

@@ -1,0 +1,80 @@
+class P3 extends java.lang.Object
+{
+
+    void <init>()
+    {
+        P3 r0;
+
+        r0 := @this: P3;
+
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public static void main(java.lang.String[])
+    {
+        java.lang.Throwable $r3;
+        Buf $r0;
+        T $r1;
+        java.lang.String[] r4;
+        java.lang.Exception $r2;
+
+        r4 := @parameter0: java.lang.String[];
+
+     label1:
+        $r0 = new Buf;
+
+        specialinvoke $r0.<Buf: void <init>()>();
+
+        $r1 = new T;
+
+        specialinvoke $r1.<T: void <init>()>();
+
+        virtualinvoke $r1.<T: void set1(Buf)>($r0);
+
+        virtualinvoke $r1.<T: void start()>();
+
+        entermonitor $r0;
+
+     label2:
+        virtualinvoke $r0.<Buf: int add(int,int)>(10, 20);
+
+        virtualinvoke $r0.<java.lang.Object: void notify()>();
+
+        virtualinvoke $r0.<Buf: void l1()>();
+
+        exitmonitor $r0;
+
+     label3:
+        goto label6;
+
+     label4:
+        $r3 := @caughtexception;
+
+        exitmonitor $r0;
+
+     label5:
+        throw $r3;
+
+     label6:
+        virtualinvoke $r0.<Buf: void l2()>();
+
+        virtualinvoke $r1.<T: void join()>();
+
+        virtualinvoke $r0.<Buf: void l7()>();
+
+     label7:
+        goto label9;
+
+     label8:
+        $r2 := @caughtexception;
+
+     label9:
+        return;
+
+        catch java.lang.Throwable from label2 to label3 with label4;
+        catch java.lang.Throwable from label4 to label5 with label4;
+        catch java.lang.Exception from label1 to label7 with label8;
+    }
+}

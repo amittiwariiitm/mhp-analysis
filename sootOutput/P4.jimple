@@ -1,0 +1,130 @@
+class P4 extends java.lang.Object
+{
+
+    void <init>()
+    {
+        P4 r0;
+
+        r0 := @this: P4;
+
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public static void main(java.lang.String[])
+    {
+        java.lang.Throwable $r5, $r6;
+        java.lang.String[] r7;
+        java.lang.Exception $r4;
+        Buf $r0;
+        T $r1, $r2, $r3;
+
+        r7 := @parameter0: java.lang.String[];
+
+        $r0 = new Buf;
+
+        specialinvoke $r0.<Buf: void <init>()>();
+
+        $r1 = new T;
+
+        specialinvoke $r1.<T: void <init>()>();
+
+        $r2 = new T;
+
+        specialinvoke $r2.<T: void <init>()>();
+
+        $r3 = new T;
+
+        specialinvoke $r3.<T: void <init>()>();
+
+        virtualinvoke $r1.<T: void set(Buf)>($r0);
+
+        virtualinvoke $r2.<T: void set(Buf)>($r0);
+
+        virtualinvoke $r3.<T: void set(Buf)>($r0);
+
+        virtualinvoke $r1.<T: void start()>();
+
+        virtualinvoke $r2.<T: void start()>();
+
+        virtualinvoke $r3.<T: void start()>();
+
+        entermonitor $r0;
+
+     label01:
+        virtualinvoke $r0.<Buf: void l0()>();
+
+        virtualinvoke $r0.<java.lang.Object: void notify()>();
+
+        virtualinvoke $r0.<Buf: void l1()>();
+
+        virtualinvoke $r0.<java.lang.Object: void notifyAll()>();
+
+        virtualinvoke $r0.<Buf: void l2()>();
+
+        exitmonitor $r0;
+
+     label02:
+        goto label05;
+
+     label03:
+        $r6 := @caughtexception;
+
+        exitmonitor $r0;
+
+     label04:
+        throw $r6;
+
+     label05:
+        virtualinvoke $r0.<Buf: void l14()>();
+
+        entermonitor $r0;
+
+     label06:
+        virtualinvoke $r0.<Buf: void l3()>();
+
+        virtualinvoke $r0.<java.lang.Object: void notifyAll()>();
+
+        virtualinvoke $r0.<Buf: void l4()>();
+
+        virtualinvoke $r0.<java.lang.Object: void notify()>();
+
+        virtualinvoke $r0.<Buf: void l5()>();
+
+        exitmonitor $r0;
+
+     label07:
+        goto label10;
+
+     label08:
+        $r5 := @caughtexception;
+
+        exitmonitor $r0;
+
+     label09:
+        throw $r5;
+
+     label10:
+        virtualinvoke $r1.<T: void join()>();
+
+        virtualinvoke $r2.<T: void join()>();
+
+        virtualinvoke $r3.<T: void join()>();
+
+     label11:
+        goto label13;
+
+     label12:
+        $r4 := @caughtexception;
+
+     label13:
+        return;
+
+        catch java.lang.Throwable from label01 to label02 with label03;
+        catch java.lang.Throwable from label03 to label04 with label03;
+        catch java.lang.Throwable from label06 to label07 with label08;
+        catch java.lang.Throwable from label08 to label09 with label08;
+        catch java.lang.Exception from label10 to label11 with label12;
+    }
+}

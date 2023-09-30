@@ -1,0 +1,166 @@
+class T extends java.lang.Thread
+{
+    Buf b;
+
+    void <init>()
+    {
+        T r0;
+
+        r0 := @this: T;
+
+        specialinvoke r0.<java.lang.Thread: void <init>()>();
+
+        return;
+    }
+
+    public void set(Buf)
+    {
+        Buf r1;
+        T r0;
+
+        r0 := @this: T;
+
+        r1 := @parameter0: Buf;
+
+        r0.<T: Buf b> = r1;
+
+        return;
+    }
+
+    public int f1(int)
+    {
+        int i0, $i1;
+        T r0;
+
+        r0 := @this: T;
+
+        i0 := @parameter0: int;
+
+        $i1 = i0 + 50;
+
+        return $i1;
+    }
+
+    public int f2(int)
+    {
+        int i0, $i1;
+        T r0;
+
+        r0 := @this: T;
+
+        i0 := @parameter0: int;
+
+        $i1 = i0 + 20;
+
+        return $i1;
+    }
+
+    public void run()
+    {
+        java.lang.Throwable $r14, $r15;
+        Buf $r1, $r2, $r3, $r4, $r5, $r6, $r7, $r8, $r9, $r10, $r11, $r12;
+        T r0;
+        int $i0;
+        java.lang.Exception $r13;
+
+        r0 := @this: T;
+
+     label01:
+        $r1 = r0.<T: Buf b>;
+
+        entermonitor $r1;
+
+     label02:
+        $r2 = r0.<T: Buf b>;
+
+        virtualinvoke $r2.<Buf: void l6()>();
+
+        $r3 = r0.<T: Buf b>;
+
+        virtualinvoke $r3.<java.lang.Object: void wait()>();
+
+        $r4 = r0.<T: Buf b>;
+
+        virtualinvoke $r4.<Buf: void l7()>();
+
+        $i0 = virtualinvoke r0.<T: int f1(int)>(10);
+
+        $r5 = r0.<T: Buf b>;
+
+        virtualinvoke $r5.<Buf: void l8()>();
+
+        exitmonitor $r1;
+
+     label03:
+        goto label06;
+
+     label04:
+        $r15 := @caughtexception;
+
+        exitmonitor $r1;
+
+     label05:
+        throw $r15;
+
+     label06:
+        $r6 = r0.<T: Buf b>;
+
+        virtualinvoke $r6.<Buf: void l9()>();
+
+        $r7 = r0.<T: Buf b>;
+
+        entermonitor $r7;
+
+     label07:
+        $r8 = r0.<T: Buf b>;
+
+        virtualinvoke $r8.<Buf: void l10()>();
+
+        $r9 = r0.<T: Buf b>;
+
+        virtualinvoke $r9.<java.lang.Object: void wait()>();
+
+        $r10 = r0.<T: Buf b>;
+
+        virtualinvoke $r10.<Buf: void l11()>();
+
+        virtualinvoke r0.<T: int f2(int)>($i0);
+
+        $r11 = r0.<T: Buf b>;
+
+        virtualinvoke $r11.<Buf: void l12()>();
+
+        exitmonitor $r7;
+
+     label08:
+        goto label11;
+
+     label09:
+        $r14 := @caughtexception;
+
+        exitmonitor $r7;
+
+     label10:
+        throw $r14;
+
+     label11:
+        $r12 = r0.<T: Buf b>;
+
+        virtualinvoke $r12.<Buf: void l13()>();
+
+     label12:
+        goto label14;
+
+     label13:
+        $r13 := @caughtexception;
+
+     label14:
+        return;
+
+        catch java.lang.Throwable from label02 to label03 with label04;
+        catch java.lang.Throwable from label04 to label05 with label04;
+        catch java.lang.Throwable from label07 to label08 with label09;
+        catch java.lang.Throwable from label09 to label10 with label09;
+        catch java.lang.Exception from label01 to label12 with label13;
+    }
+}

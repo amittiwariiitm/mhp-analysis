@@ -1,0 +1,14 @@
+T:f2, Buf:f1
+T:p5, T:p3
+T:p5, T:f2
+T:p5, T:p4
+T:p5, T:p5
+Buf:f1, T:p3
+Buf:f1, T:p4
+Buf:f1, T:p5
+T:p3, T:p3
+T:f2, T:f2
+T:p4, T:p4
+T:p3, T:f2
+T:f2, T:p4
+T:p3, T:p4

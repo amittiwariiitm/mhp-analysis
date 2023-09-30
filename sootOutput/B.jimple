@@ -1,0 +1,80 @@
+class B extends java.lang.Thread
+{
+    Buf b;
+
+    void <init>()
+    {
+        B r0;
+
+        r0 := @this: B;
+
+        specialinvoke r0.<java.lang.Thread: void <init>()>();
+
+        return;
+    }
+
+    public void run()
+    {
+        java.lang.Throwable $r3;
+        B r0;
+        Buf $r1;
+        java.lang.Exception $r2;
+
+        r0 := @this: B;
+
+     label1:
+        $r1 = r0.<B: Buf b>;
+
+        entermonitor $r1;
+
+     label2:
+        virtualinvoke r0.<B: void bar()>();
+
+        exitmonitor $r1;
+
+     label3:
+        goto label6;
+
+     label4:
+        $r3 := @caughtexception;
+
+        exitmonitor $r1;
+
+     label5:
+        throw $r3;
+
+     label6:
+        virtualinvoke r0.<B: void foo()>();
+
+     label7:
+        goto label9;
+
+     label8:
+        $r2 := @caughtexception;
+
+     label9:
+        return;
+
+        catch java.lang.Throwable from label2 to label3 with label4;
+        catch java.lang.Throwable from label4 to label5 with label4;
+        catch java.lang.Exception from label1 to label7 with label8;
+    }
+
+    public void foo()
+    {
+        B r0;
+
+        r0 := @this: B;
+
+        return;
+    }
+
+    public void bar()
+    {
+        B r0;
+
+        r0 := @this: B;
+
+        return;
+    }
+}
